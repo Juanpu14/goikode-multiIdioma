@@ -130,6 +130,36 @@ const en = {
       description: 'The name "Goikode" comes from the combination of "goiko" (which means "superior" in Basque) and "code" (in English). Although our CEO insists that it came to him while eating a Spanish omelette pintxo.'
     }
   },
+  history: {
+    title: 'Us and Our Field',
+    mission: {
+      title: 'Our Beginnings',
+      description: 'We were born in 2015, with only two employees. After a great effort, we were able to double our team and acquire larger clients, such as Iberdrola.'
+    },
+    history: {
+      title: 'Our Clients',
+      description: 'We stand out from other companies because of our clients. They trust us as much as we trust them. After all, the foundation of a good company is quality and trust.'
+    },
+    team: {
+      title: 'Programming',
+      description: 'Nowadays, it is impossible to use anything that does not involve programming: a website, a mobile phone, a car. That is why having strong control over it as well as reliable allies is essential.'
+    } 
+  },
+  contact: {
+    title: 'Contact Form',
+    name: {
+      title: 'Name',
+    },
+    email: {
+      title: 'Email',
+    },
+    message: {
+      title: 'Subject',
+    },
+    send: {
+      title: 'Send',
+    } 
+  },
   footer: {
     rights: 'All rights reserved.'
   },
@@ -142,7 +172,9 @@ const en = {
 const eu = {
   nav: {
     home: 'Hasiera',
-    about: 'Guri Buruz'
+    about: 'Guri Buruz',
+    contact: 'kontaktua',
+    history: 'gure historia'
   },
   home: {
     welcome: 'Ongi etorri Goikode-ra',
@@ -181,6 +213,36 @@ const eu = {
       title: 'Ba al zenekien...?',
       description: '"Goikode" izena "goiko" (euskaraz "gorenekoa" esan nahi duena) eta "code" (ingelesez kodea) konbinaziotik dator. Nahiz eta gure CEOk dio tortilla pintxo bat jaten ari zela bururatu zitzaiola.'
     }
+  },
+  history: {
+    title: 'Gu eta gure zelaia',
+    mission: {
+      title: 'Gure hastapenak',
+      description: '2015ean jaio ginen, bi langilerekin bakarrik. Ahalegin handia egin ondoren, plantilla bikoiztu eta bezero handiagoak lortu ahal izan genituen, hala nola Iberdrola.'
+    },
+    history: {
+      title: 'Gure bezeroak',
+      description: 'Gure bezeroengatik nabarmentzen gara gainerako enpresen gainetik. Haiek gugan konfiantza dute, guk haiengan bezainbeste. Bada, enpresa on baten oinarria kalitatea eta konfiantza dira.'
+    },
+    team: {
+      title: 'Programazioa',
+      description: 'Gaur egun, ezinezkoa da programazio zerbait ez duen zerbait erabiltzea: webgune bat, mugikorra, autoa. Horregatik, ezinbestekoa da haren gaineko kontrol handia izatea, baita alido fidagarriak ere.'
+    } 
+  },
+  contact: {
+    title: 'Kontaktuak',
+    name: {
+      title: 'Izena',
+    },
+    email: {
+      title: 'Emaila',
+    },
+    message: {
+      title: 'Gaia',
+    },
+    send: {
+      title: 'Bidali',
+    } 
   },
   footer: {
     rights: 'Eskubide guztiak erreserbatuak.'
