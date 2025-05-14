@@ -18,11 +18,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # Usa la versión de Node.js que necesita tu proyecto
+          node-version: '20'  # Usa la versión de Node.js que necesita tu proyecto
 
       # Paso 3: Instalar dependencias
       - name: Install dependencies
-        run: npm install  # Instala las dependencias de tu proyecto
+        run: npm ci  # Instala las dependencias de tu proyecto
 
       # Paso 4: Construir el proyecto
       - name: Build project
