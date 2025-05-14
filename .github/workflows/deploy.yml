@@ -3,17 +3,35 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # Esta es la rama donde se hará el despliegue
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  build_and_deploy:
+    runs-on: ubuntu-latest  # Usa Ubuntu para ejecutar el flujo de trabajo
+
     steps:
+      # Paso 1: Checkout del código del repositorio
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      # Paso 2: Configurar Node.js en el entorno de GitHub Actions
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Usa la versión de Node.js que necesita tu proyecto
+
+      # Paso 3: Instalar dependencias
+      - name: Install dependencies
+        run: npm install  # Instala las dependencias de tu proyecto
+
+      # Paso 4: Construir el proyecto
+      - name: Build project
+        run: npm run build  # Genera los archivos estáticos en la carpeta 'dist/'
+
+      # Paso 5: Desplegar los archivos generados en la carpeta 'dist/' a GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@4.1.4
         with:
-          branch: gh-pages
-          folder: .
+          branch: gh-pages  # La rama donde se publicarán los archivos
+          folder: dist  # La carpeta que contiene los archivos estáticos generados
+          clean: true  # Limpiar la rama gh-pages antes de subir nuevos archivos
