@@ -47,7 +47,7 @@ const es = {
     }
   },
   history: {
-    title: 'Nosotros y Nuestro Campo',
+    title: 'Nosotros y Nuestro Campo de Trabajo',
     mission: {
       title: 'Nuestros comienzos',
       description: 'Nacimos en 2015, con solo dos trabajadores. Tras mucho esfuerzo, pudimos duplicar la plantilla y obtener clientes mas grandes como Iberdrola.'
