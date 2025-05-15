@@ -25,7 +25,7 @@
 export default {
   data() {
     return {
-      opciones: ["chupito", "cubata", "cubaton", "tu madre", "tu padre", "unai"],
+      opciones: ["chupito", "cerveza", "aguita", "garrafa", "botella", "kiss"],
       rotation: 0,
     };
   },
