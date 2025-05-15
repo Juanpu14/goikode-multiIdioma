@@ -6,7 +6,10 @@ const es = {
     home: 'Inicio',
     about: 'Sobre Nosotros',
     contact: 'Contacto',
-    history: 'Nuestra Historia'
+    history: 'Nuestra Historia',
+    rulet: 'Suertudo amor',
+    ruleta: 'La rule'
+
   },
   home: {
     welcome: 'Bienvenido a Goikode',
@@ -75,6 +78,23 @@ const es = {
     send: {
       title: 'Enviar',
     } 
+  },
+  rulet: {
+    title: 'Calculadora de Amor',
+    subtitle: 'Introduce dos nombres y',
+    subtitle2: 'CupiDOOR',
+    subtitle3: 'te mostrara el AMOR latente',
+    name: {
+      nombre1: 'Nombre del enamorado',
+      nombre2: 'Nombre del enamoradisimo',
+    },
+    calculate: {
+      title: 'Calculeison',
+    },
+  },
+  ruleta: {
+    title: 'Ruleton del BebeDOOR',
+    girar: 'Girar',
   },
   footer: {
     rights: 'Todos los derechos reservados.'
@@ -244,6 +264,7 @@ const eu = {
       title: 'Bidali',
     } 
   },
+  
   footer: {
     rights: 'Eskubide guztiak erreserbatuak.'
   },

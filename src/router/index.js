@@ -3,6 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import AboutView from '../views/AboutView.vue'
 import ContactView from '../views/ContactView.vue'
 import HistoryView from '../views/HistoryView.vue'
+import rulet from '../views/rulet.vue'
+import ruleta from '../views/ruleta.vue'
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,6 +29,16 @@ const router = createRouter({
       path: '/history',
       name: 'history',
       component: HistoryView
+    },
+    {
+      path: '/rulet',
+      name: 'rulet',
+      component: rulet
+    },
+    {
+      path: '/ruleta',
+      name: 'ruleta',
+      component: ruleta
     }
   ]
 })

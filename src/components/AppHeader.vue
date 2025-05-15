@@ -7,6 +7,8 @@
         <router-link to="/about">{{ $t('nav.about') }}</router-link>
         <router-link to="/contact">{{ $t('nav.contact') }}</router-link>
         <router-link to="/history">{{ $t('nav.history') }}</router-link>
+        <router-link to="/rulet">{{ $t('nav.rulet') }}</router-link>
+        <router-link to="/ruleta">{{ $t('nav.ruleta') }}</router-link>
         <LanguageSelector class="language-selector" />
       </nav>
     </div>
