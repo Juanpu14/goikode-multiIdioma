@@ -1,38 +1,66 @@
 <template>
   <div class="contact">
     <h1>{{ $t('contact.title') }}</h1>
-    
+
     <div class="contact-content">
       <div class="contact-text">
-         <form>
+        <form @submit.prevent="enviarFormulario">
           <div class="form-group">
             <h2>{{ $t('contact.name.title') }}</h2>
-            <input type="text" id="name" required />
+            <input v-model="form.nombre" placeholder="Nombre" class="block mb-2 border p-2 w-full" />
           </div>
 
           <div class="form-group">
             <h2>{{ $t('contact.email.title') }}</h2>
-            <input type="email" id="email" required />
+            <input v-model="form.mail" placeholder="Mail" class="block mb-2 border p-2 w-full" />
           </div>
 
           <div class="form-group">
             <h2>{{ $t('contact.message.title') }}</h2>
-            <textarea id="message" required></textarea>
+            <input v-model="form.asunto" placeholder="Asunto" class="block mb-2 border p-2 w-full" />
           </div>
 
           <button type="submit">{{ $t('contact.send.title') }}</button>
         </form>
-
       </div>
     </div>
   </div>
-</template>
+</template> 
+
+<script>
+export default {
+  name: "FormularioView",
+  data() {
+    return {
+      form: {
+        nombre: '',
+        mail: '',
+        telefono: '',
+        asunto: ''
+      }
+    };
+  },
+  methods: {
+    enviarFormulario() {
+      const datosActuales = JSON.parse(localStorage.getItem('formularios')) || [];
+      datosActuales.push({ ...this.form });
+      localStorage.setItem('formularios', JSON.stringify(datosActuales));
+      this.$router.push({ name: 'lista' });
+    }
+  }
+};
+</script>
+
+
+
 
 <style scoped>
 .contact {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .contact-content {
@@ -40,14 +68,14 @@
 }
 
 h1 {
-  color: var(--secondary-color);
+  color: var(--primary-color);
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
 h2 {
   font-size: 1rem;
-  color: var(--secondary-color);
+  color: var(--primary-color);
   margin-bottom: 0.5rem;
 }
 
@@ -59,17 +87,19 @@ input,
 textarea {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-color);
   border-radius: 6px;
   box-sizing: border-box;
   font-size: 1rem;
   font-family: inherit;
-  transition: border-color 0.2s ease;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: border-color 0.2s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
 input:focus,
 textarea:focus {
-  border-color: #1890ff;
+  border-color: var(--link-hover-color);
   outline: none;
 }
 
@@ -79,8 +109,8 @@ textarea {
 }
 
 button {
-  background-color: #1890ff;
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   padding: 0.75rem 1.5rem;
   font-size: 1rem;
   font-weight: bold;
@@ -91,8 +121,9 @@ button {
 }
 
 button:hover {
-  background-color: #40a9ff;
+  background-color: var(--link-hover-color);
 }
 </style>
+
 
 
