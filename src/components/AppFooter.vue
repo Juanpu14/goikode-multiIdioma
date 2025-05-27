@@ -8,10 +8,11 @@
 
 <style scoped>
 footer {
-  background-color: #f8f9fa;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
   padding: 1rem 0;
   margin-top: 2rem;
   text-align: center;
-  color: #666;
+  
 }
 </style>

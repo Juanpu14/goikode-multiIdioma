@@ -31,11 +31,12 @@
 </template>
 
 <style scoped>
-/* Mantener los mismos estilos que antes */
 .home {
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 .hero {
@@ -60,22 +61,23 @@
 
 .tagline {
   font-size: 1.2rem;
-  color: #666;
+  color: color-mix(in srgb, var(--text-color) 70%, var(--bg-color)); /* tono equilibrado */
   margin-bottom: 1.5rem;
 }
 
 .btn-primary {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: white;
-  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.5rem 1rem;
   border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .btn-primary:hover {
-  background-color: #3aa876;
-  text-decoration: none;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
 }
 
 .features {
@@ -86,11 +88,12 @@
 }
 
 .feature-card {
-  background-color: #f8f9fa;
+  background-color: color-mix(in srgb, var(--bg-color) 90%, var(--primary-color));
   border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08); /* más suave para ambos modos */
   transition: transform 0.3s ease;
+  color: var(--text-color);
 }
 
 .feature-card:hover {

@@ -16,11 +16,18 @@
           </div>
 
           <div class="form-group">
+            <h2>{{ $t('contact.telef.title') }}</h2>
+            <input v-model="form.telefono" placeholder="Teléfono" class="block mb-2 border p-2 w-full" />
+          </div>
+
+          <div class="form-group">
             <h2>{{ $t('contact.message.title') }}</h2>
             <input v-model="form.asunto" placeholder="Asunto" class="block mb-2 border p-2 w-full" />
           </div>
 
           <button type="submit">{{ $t('contact.send.title') }}</button>
+
+          <p v-if="mensajeEnviado" class="text-green-600 mt-4">Formulario enviado</p>
         </form>
       </div>
     </div>
@@ -37,7 +44,8 @@ export default {
         mail: '',
         telefono: '',
         asunto: ''
-      }
+      },
+      mensajeEnviado: false
     };
   },
   methods: {
@@ -45,11 +53,26 @@ export default {
       const datosActuales = JSON.parse(localStorage.getItem('formularios')) || [];
       datosActuales.push({ ...this.form });
       localStorage.setItem('formularios', JSON.stringify(datosActuales));
-      this.$router.push({ name: 'lista' });
+      
+      this.mensajeEnviado = true;
+
+      this.form.nombre = '';
+      this.form.mail = '';
+      this.form.telefono = '';
+      this.form.asunto = '';
+
+      setTimeout(() => {
+        this.mensajeEnviado = false;
+      }, 3000);
     }
   }
 };
 </script>
+
+<style scoped>
+/* tus estilos siguen igual */
+</style>
+
 
 
 

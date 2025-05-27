@@ -10,6 +10,9 @@
         <router-link to="/rulet">{{ $t('nav.rulet') }}</router-link>
         <router-link to="/ruleta">{{ $t('nav.ruleta') }}</router-link>
         <LanguageSelector class="language-selector" />
+        <button class="theme-toggle" @click="toggleTheme">
+          {{ isDark ? '🌙' : '☀️' }}
+        </button>
       </nav>
     </div>
   </header>
@@ -21,17 +24,42 @@ import LanguageSelector from './LanguageSelector.vue'
 export default {
   components: {
     LanguageSelector
+  },
+  data() {
+    return {
+      isDark: true
+    }
+  },
+  mounted() {
+    const savedTheme = localStorage.getItem('theme')
+    if (savedTheme) {
+      this.isDark = savedTheme === 'dark'
+    } else {
+      this.isDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+    }
+    this.applyTheme()
+  },
+  methods: {
+    toggleTheme() {
+      this.isDark = !this.isDark
+      localStorage.setItem('theme', this.isDark ? 'dark' : 'light')
+      this.applyTheme()
+    },
+    applyTheme() {
+      document.body.classList.toggle('dark-mode', this.isDark)
+      document.body.classList.toggle('light-mode', !this.isDark)
+    }
   }
 }
 </script>
 
+
 <style scoped>
 header {
   background-color: var(--secondary-color);
-  color: white;
+  color: var(--primary-color);
   padding: 1rem 0;
 }
-
 header .container {
   display: flex;
   justify-content: space-between;
@@ -54,13 +82,12 @@ nav {
 }
 
 nav a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s;
+  color: var(--primary-color);
 }
 
-nav a:hover, nav a.router-link-active {
-  color: var(--primary-color);
+nav a:hover,
+nav a.router-link-active {
+  color: var(--link-hover-color);
 }
 
 .language-selector {

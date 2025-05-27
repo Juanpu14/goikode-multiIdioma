@@ -72,6 +72,9 @@ const es = {
     email: {
       title: 'Email',
     },
+    telef: {
+      title: 'Teléfono'
+    },
     message: {
       title: 'Asunto',
     },
